@@ -30,16 +30,4 @@ public class DailyForecastActivity extends ListActivity {
         DayAdapter adapter = new DayAdapter(this, mDays);
         setListAdapter(adapter);
     }
-
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
-
-        String dayOfTheWeek = mDays[position].getDayOfTheWeek();
-        String conditions = mDays[position].getSummery();
-        String highTemp = mDays[position].getTempMax() + "";
-        String message = String.format("On %s the high will be %s and it will be %s",
-                dayOfTheWeek, highTemp, conditions);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
 }
